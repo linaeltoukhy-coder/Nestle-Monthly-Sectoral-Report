@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nestlé Egypt — Strategic Sectoral Monitor | March 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --nestle-red: #C41230;
+    --nestle-dark: #1B1B1B;
+    --navy: #1A2744;
+    --navy-light: #243359;
+    --gold: #B8892A;
+    --cream: #FAF8F2;
+    --warm-white: #FFFFFF;
+    --muted: #6B6B6B;
+    --border: #E0DBD0;
+    --s-color: #1D6B4A;
+    --s-bg: #EAF4EF;
+    --e-color: #1A5EA8;
+    --e-bg: #E8F1FB;
+    --env-color: #3B6D11;
+    --env-bg: #EBF3DE;
+    --g-color: #7A3B00;
+    --g-bg: #FBF0E4;
+    --risk-high: #C41230;
+    --risk-high-bg: #FCEBED;
+    --risk-med: #B8892A;
+    --risk-med-bg: #FBF4E4;
+    --risk-low: #1D6B4A;
+    --risk-low-bg: #EAF4EF;
+    --risk-opp: #1A5EA8;
+    --risk-opp-bg: #E8F1FB;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--nestle-dark);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  a { color: var(--navy); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ─── COVER ─────────────────────────────── */
+  .cover {
+    background: var(--navy);
+    color: #fff;
+    padding: 56px 64px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 340px; height: 100%;
+    background: var(--nestle-red);
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
+    opacity: 0.12;
+  }
+  .cover-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    max-width: 580px;
+    margin-bottom: 12px;
+  }
+  .cover-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 32px;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cover-meta-item { font-size: 12px; color: rgba(255,255,255,0.5); }
+  .cover-meta-item strong { color: rgba(255,255,255,0.85); display: block; font-size: 13px; margin-bottom: 2px; }
+
+  /* ─── NAV ─────────────────────────────── */
+  .nav {
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .nav a {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    padding: 14px 16px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+  .nav a:hover { color: var(--nestle-red); border-bottom-color: var(--nestle-red); text-decoration: none; }
+
+  /* ─── LAYOUT ─────────────────────────────── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 64px; }
+  .section { padding: 48px 0; border-bottom: 1px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+  .section-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 2px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+  .section-subtitle { font-size: 14px; color: var(--muted); margin-bottom: 32px; max-width: 680px; }
+
+  /* ─── EXEC SUMMARY ─────────────────────────────── */
+  .exec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
+  .exec-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 24px;
+    border-left: 4px solid;
+  }
+  .exec-card.red { border-left-color: var(--risk-high); }
+  .exec-card.amber { border-left-color: var(--risk-med); }
+  .exec-card.green { border-left-color: var(--risk-low); }
+  .exec-card.blue { border-left-color: var(--risk-opp); }
+  .exec-card h4 { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; color: var(--muted); }
+  .exec-card ul { padding-left: 16px; }
+  .exec-card ul li { font-size: 13px; margin-bottom: 6px; line-height: 1.45; }
+
+  /* ─── EARLY WARNING ─────────────────────────────── */
+  .ew-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px; }
+  .ew-item {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px 18px;
+    position: relative;
+  }
+  .ew-badge {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  .badge-high { background: var(--risk-high-bg); color: var(--risk-high); }
+  .badge-med { background: var(--risk-med-bg); color: var(--risk-med); }
+  .badge-low { background: var(--risk-low-bg); color: var(--risk-low); }
+  .badge-opp { background: var(--risk-opp-bg); color: var(--risk-opp); }
+  .ew-item h5 { font-size: 13px; font-weight: 600; margin-bottom: 6px; color: var(--navy); line-height: 1.3; }
+  .ew-item p { font-size: 12px; color: var(--muted); line-height: 1.4; }
+
+  /* ─── PILLAR CARDS ─────────────────────────────── */
+  .pillar-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 24px;
+    border-radius: 6px 6px 0 0;
+    border: 1px solid var(--border);
+  }
+  .pillar-icon {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+  .pillar-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .pillar-header p { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  .pillar-body {
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    background: var(--warm-white);
+    overflow: hidden;
+  }
+  .pillar-item {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: start;
+  }
+  .pillar-item:last-child { border-bottom: none; }
+  .pillar-item h5 {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--nestle-dark);
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+  .pillar-item p { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+  .pillar-item a { font-size: 11px; color: var(--navy); opacity: 0.7; }
+
+  .nestle-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    white-space: nowrap;
+    background: #FFF0F3;
+    color: var(--nestle-red);
+    border: 1px solid #F9C0CB;
+  }
+
+  .pillar-s .pillar-header { background: var(--s-bg); }
+  .pillar-e .pillar-header { background: var(--e-bg); }
+  .pillar-env .pillar-header { background: var(--env-bg); }
+  .pillar-g .pillar-header { background: var(--g-bg); }
+  .pillar-s .pillar-icon { background: rgba(29,107,74,0.15); }
+  .pillar-e .pillar-icon { background: rgba(26,94,168,0.15); }
+  .pillar-env .pillar-icon { background: rgba(59,109,17,0.15); }
+  .pillar-g .pillar-icon { background: rgba(122,59,0,0.15); }
+
+  .pillars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+  /* ─── TABLE ─────────────────────────────── */
+  .table-wrap { overflow-x: auto; border-radius: 6px; border: 1px solid var(--border); margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table th {
+    background: var(--navy);
+    color: #fff;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 11px 14px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.45;
+    color: var(--nestle-dark);
+  }
+  table tr:last-child td { border-bottom: none; }
+  table tr:nth-child(even) td { background: #FAFAF8; }
+  .col-w1 { width: 14%; }
+  .col-w2 { width: 13%; }
+  .col-w3 { width: 22%; }
+  .col-w4 { width: 18%; }
+  .col-w5 { width: 18%; }
+  .col-w6 { width: 15%; }
+
+  /* ─── COMPETITIVE ─────────────────────────────── */
+  .comp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .comp-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .comp-header {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .comp-initial {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .comp-header h5 { font-size: 14px; font-weight: 600; color: var(--navy); }
+  .comp-header p { font-size: 11px; color: var(--muted); }
+  .comp-body { padding: 14px 18px; }
+  .comp-item { margin-bottom: 10px; }
+  .comp-item:last-child { margin-bottom: 0; }
+  .comp-item-tag {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    color: var(--muted);
+  }
+  .comp-item p { font-size: 12.5px; color: var(--nestle-dark); line-height: 1.45; }
+
+  /* ─── STRATEGIC LENS ─────────────────────────────── */
+  .lens-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .lens-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 20px;
+  }
+  .lens-card h5 { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 8px; line-height: 1.3; }
+  .lens-card .lens-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+    display: block;
+  }
+  .lens-card p { font-size: 12.5px; color: var(--nestle-dark); line-height: 1.5; margin-bottom: 10px; }
+  .lens-card .action {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--nestle-red);
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    margin-top: 10px;
+    display: block;
+    line-height: 1.4;
+  }
+
+  /* ─── MISSING NEWS ─────────────────────────────── */
+  .missing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .missing-item {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+  }
+  .missing-item h5 { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
+  .missing-item p { font-size: 12.5px; color: var(--muted); line-height: 1.45; }
+  .missing-item .cat { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+
+  /* ─── FOOTER ─────────────────────────────── */
+  .footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.45);
+    padding: 24px 64px;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .footer strong { color: rgba(255,255,255,0.7); }
+
+  @media (max-width: 900px) {
+    .container { padding: 0 24px; }
+    .cover { padding: 40px 24px 36px; }
+    .nav { padding: 0 24px; }
+    .pillars-grid, .exec-grid, .comp-grid, .missing-grid, .lens-grid, .ew-grid { grid-template-columns: 1fr; }
+    .cover h1 { font-size: 28px; }
+    .footer { padding: 20px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ COVER ═══════════════ -->
+<div class="cover">
+  <span class="cover-tag">Confidential &nbsp;|&nbsp; Strategic Intelligence</span>
+  <h1>Egypt Strategic<br>Sectoral Monitor</h1>
+  <p class="cover-sub">Prepared for Nestlé Egypt </p>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>Edition</strong>March 2026 &nbsp;|&nbsp; Issue 02</div>
+    <div class="cover-meta-item"><strong>Coverage Period</strong>1 – 31 March 2026</div>
+    <div class="cover-meta-item"><strong>Framework</strong>Social · Economic · Environmental · Governance</div>
+    <div class="cover-meta-item"><strong>Classification</strong>Confidential — For Internal Use Only</div>
+  </div>
+</div>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav class="nav">
+  <a href="#exec">Executive Summary</a>
+  <a href="#early-warning">Early Warning</a>
+  <a href="#missing">Intelligence Gaps</a>
+  <a href="#pillars">SEEG Pillars</a>
+  <a href="#matrix">Regulatory Matrix</a>
+  <a href="#competitive">Competitive Intelligence</a>
+  <a href="#strategic-lens">Nestlé Strategic Lens</a>
+</nav>
+
+<!-- ═══════════════ EXEC SUMMARY ═══════════════ -->
+<div class="container">
+<section class="section" id="exec">
+  <span class="section-tag" style="background:#FFF0F3;color:var(--nestle-red);">Overview</span>
+  <h2 class="section-title">Executive Summary</h2>
+  <p class="section-subtitle">March 2026 delivered a complex macro backdrop: escalating regional conflict reshaping supply chains, Egypt's first CBAM-linked carbon reporting deadline, parliamentary scrutiny of infant formula supply, and a surge in investment facilitation measures. The month demands both defensive positioning and active opportunity capture.</p>
+  <div class="exec-grid">
+    <div class="exec-card red">
+      <h4>🔴 Immediate Risks</h4>
+      <ul>
+        <li><strong>Infant formula recall reputational tail risk</strong> — Parliamentary health committee convened; Nestlé named in media criticism over response timing</li>
+        <li><strong>Regional conflict supply chain stress</strong> — Shipping disruptions, rising insurance costs, priority LC queues affect import-dependent inputs</li>
+        <li><strong>Sugar import prior approval</strong> — MoI&FT Decree 119/2026 introduces joint ministerial sign-off for all raw/refined sugar imports; potential procurement delays</li>
+      </ul>
+    </div>
+    <div class="exec-card amber">
+      <h4>🟡 Watchlist</h4>
+      <ul>
+        <li><strong>Growth downgrade to 4.5–4.9%</strong> — Fitch Solutions &amp; Oxford Economics revise down; household consumption pressure tightens consumer spend</li>
+        <li><strong>IMF divestment deadline (June 15)</strong> — Government asset-sale delays risk reform confidence and FX stability</li>
+        <li><strong>Fuel price increase</strong> — ~EGP 3/litre uplift raises distribution and logistics costs across the value chain</li>
+        <li><strong>Sunday remote work effective April 1</strong> — Factories exempt, but commercial and corporate functions impacted</li>
+      </ul>
+    </div>
+    <div class="exec-card green">
+      <h4>🟢 Opportunities</h4>
+      <ul>
+        <li><strong>Investment facilitation wave</strong> — 8 Golden Licenses awarded; MoI factory leasing rule eased (1 yr vs. 3 yr); ideal window for expansion signaling</li>
+        <li><strong>Industrial investment funds</strong> — 5 investment banks engaged; Nestlé can position as anchor industrial investor</li>
+        <li><strong>Ministry of Supply–WFP MoU</strong> — Nutrition, fortification &amp; food security partnership creates advocacy alignment for Nestlé brands</li>
+      </ul>
+    </div>
+    <div class="exec-card blue">
+      <h4>🔵 Strategic Signals</h4>
+      <ul>
+        <li><strong>Arla/DMK merger</strong> — Consolidation in dairy imports; potential market share shift relevant to Nestlé dairy portfolio</li>
+        <li><strong>Unilever–Kraft Heinz condiments merger</strong> — Global FMCG restructuring; watch for Egypt-level competitive repositioning</li>
+        <li><strong>CBAM definitive regime (Jan 2026)</strong> — Egyptian carbon footprint reporting 3-month window is a compliance signal for export strategy</li>
+        <li><strong>FRA leadership change</strong> — New Chairman Islam Azzam; regulatory tone-setting period creates advocacy windows</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ EARLY WARNING ═══════════════ -->
+<section class="section" id="early-warning">
+  <span class="section-tag" style="background:var(--risk-high-bg);color:var(--risk-high);">Proactive Risk Intelligence</span>
+  <h2 class="section-title">Early-Warning Dashboard</h2>
+  <p class="section-subtitle">Signals requiring proactive monitoring, advocacy preparation, or contingency planning over the next 30–90 days.</p>
+  <div class="ew-grid">
+    <div class="ew-item">
+      <span class="ew-badge badge-high">High — Immediate</span>
+      <h5>Parliamentary Infant Formula Review</h5>
+      <p>Health Committee reviewing NFSA enforcement &amp; formula shortage. Nestlé's recall precedent in scope. Regulatory tightening or mandatory reporting obligations possible. <strong>Advocacy window: engage NFSA proactively.</strong></p>
+    </div>
+    <div class="ew-item">
+      <span class="ew-badge badge-high">High — 30 Days</span>
+      <h5>Sugar Import Prior Approval Bottleneck</h5>
+      <p>Decree 119/2026 requires joint ministerial sign-off for all raw &amp; refined sugar. Confectionery, cereals, and dairy categories at risk of procurement delays. <strong>Action: pre-secure import approvals, assess buffer stocks.</strong></p>
+    </div>
+    <div class="ew-item">
+      <span class="ew-badge badge-high">High — 90 Days</span>
+      <h5>IMF Divestment Deadline (June 15)</h5>
+      <p>Failure to meet state-asset sale targets risks IMF tranche delay, FX pressure &amp; reform sentiment reversal — impacting import costs and investor confidence. <strong>Monitor: May Cabinet announcements.</strong></p>
+    </div>
+    <div class="ew-item">
+      <span class="ew-badge badge-med">Medium — 60 Days</span>
+      <h5>CBAM Carbon Footprint Reporting</h5>
+      <p>GOEIC 3-month grace period for carbon reporting ends Q2 2026. Non-compliant factories face shipment disruptions to EU markets. CBAM definitive regime now in force. <strong>Action: complete GOEIC system upload ahead of deadline.</strong></p>
+    </div>
+    <div class="ew-item">
+      <span class="ew-badge badge-med">Medium — 60 Days</span>
+      <h5>Regional Conflict: Shipping Insurance Surge</h5>
+      <p>Banks processing LCs with tightened documentation; priority given to strategic goods. Rising premiums raise import cost of raw materials. <strong>Scenario plan: alternative sourcing routes and insurance cost absorption.</strong></p>
+    </div>
+    <div class="ew-item">
+      <span class="ew-badge badge-med">Medium — 90 Days</span>
+      <h5>FY2026/27 Budget — Tax &amp; Customs Facilitation</h5>
+      <p>Budget framework prioritizes private sector tax/customs facilitation. Potential for new incentives relevant to industrial and export activities. <strong>Opportunity: pre-budget engagement with MoF and MoI&FT.</strong></p>
+    </div>
+    <div class="ew-item">
+      <span class="ew-badge badge-opp">Opportunity — 30 Days</span>
+      <h5>Investment Law Reform Under Senate Review</h5>
+      <p>Proposed shift from revenue-based to profit-based zone fees, plus strengthened one-stop-shop. <strong>Advocacy: align Nestlé's free zone operations with reform input process via business chambers.</strong></p>
+    </div>
+    <div class="ew-item">
+      <span class="ew-badge badge-opp">Opportunity — 60 Days</span>
+      <h5>Industrial Investment Funds Launch</h5>
+      <p>MoI&FT engaging investment banks to launch industrial funds. Export council &amp; chamber consultations planned. <strong>Position Nestlé Egypt as strategic manufacturing anchor for fund outreach.</strong></p>
+    </div>
+    <div class="ew-item">
+      <span class="ew-badge badge-low">Low Risk — Monitor</span>
+      <h5>Remote Work Sunday Policy</h5>
+      <p>Effective April 1. Factories explicitly exempt. Commercial &amp; head office functions impacted. <strong>Review: customer-facing team scheduling, distributor service levels on Sundays.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ INTELLIGENCE GAPS ═══════════════ -->
+<section class="section" id="missing">
+  <span class="section-tag" style="background:#FBF4E4;color:var(--gold);">Intelligence Supplement</span>
+  <h2 class="section-title">Developments Not in Original Monitor</h2>
+  <p class="section-subtitle">Key updates identified through supplementary research — recommended for inclusion in future editions.</p>
+  <div class="missing-grid">
+    <div class="missing-item">
+      <div class="cat">Global / Nestlé</div>
+      <h5>Nestlé Infant Formula Recall — MENA Scope (Jan–Mar 2026)</h5>
+      <p>Nestlé voluntarily recalled specific batches of NAN, S26, and ALFAMINO across 8 MENA countries including Egypt, citing potential cereulide contamination in an ARA oil ingredient from a supplier. Production is back at full capacity; Egypt's parliamentary reaction is the primary residual risk. CEO Philipp Navratil published an open letter on January 30, 2026.</p>
+    </div>
+    <div class="missing-item">
+      <div class="cat">Environmental / Trade</div>
+      <h5>EU CBAM Definitive Regime Entered Force (Jan 1, 2026)</h5>
+      <p>The EU Carbon Border Adjustment Mechanism moved from transitional to definitive phase on January 1, 2026. Egypt's GOEIC 3-month carbon footprint reporting window is a direct domestic response. Iron, steel, aluminium, fertilisers, cement and hydrogen are covered. Egypt's fertilizer exports face the heaviest exposure. Packaging and food-grade inputs not yet covered but monitoring is warranted.</p>
+    </div>
+    <div class="missing-item">
+      <div class="cat">Competitive / Dairy</div>
+      <h5>Danone Globally Acquires Huel (Nutritionally-Complete Brand)</h5>
+      <p>Danone announced the acquisition of Huel as part of its "Renew Danone" strategy, entering the fast-growing nutritionally complete foods space. While not Egypt-specific, this signals Danone's global pivot toward functional nutrition — a space adjacent to Nestlé's Nido and Cerelac portfolios.</p>
+    </div>
+    <div class="missing-item">
+      <div class="cat">Competitive / Sustainability</div>
+      <h5>PepsiCo Confirms Completion of 2025 Water Targets (World Water Day, March 22)</h5>
+      <p>Coinciding with World Water Day 2026, PepsiCo announced it met its pep+ water stewardship targets set for 2025. This positions PepsiCo ahead of peers on ESG communications in the MENA region and sets a benchmark for industry sustainability reporting — relevant to Nestlé's own renewable electricity commitment and water stewardship strategy.</p>
+    </div>
+    <div class="missing-item">
+      <div class="cat">Regulatory / Nutrition</div>
+      <h5>EFSA Issues New Cereulide Action Limit for Infant Formula (Feb 2, 2026)</h5>
+      <p>The European Food Safety Authority introduced an acute reference dose of 0.43 ng/g for cereulide in infant formula. Nestlé had already applied a stricter internal limit of 0.2 ng/g. This creates a new EU-aligned benchmark that Egyptian NFSA may reference in revising domestic infant nutrition standards — a potential advocacy and proactive compliance opportunity.</p>
+    </div>
+    <div class="missing-item">
+      <div class="cat">Industry / Market</div>
+      <h5>Juhayna H1 2025: +23% Revenue, +47% Export Growth</h5>
+      <p>Juhayna Food Industries reported revenues of USD 293.51M (EGP 14.2B) for H1 2025, driven by double-digit volume growth and a 47% USD-denominated increase in finished exports. Juhayna also launched Greek yogurt, Turkish Labneh, and Premium Pudding ranges — directly competing with Nestlé dairy positioning. Baladna (Qatar) holds 15% stake.</p>
+    </div>
+    <div class="missing-item">
+      <div class="cat">Regulatory / FX</div>
+      <h5>Importers Registry Law Now Allows Foreign-Currency Capital</h5>
+      <p>HoR final approval of amendments to Law 121/1982 now allows companies to register as importers with capital denominated in foreign currency. This directly eases the operating environment for multinationals like Nestlé that hold foreign-currency capital structures, and reduces procedural friction for import operations.</p>
+    </div>
+    <div class="missing-item">
+      <div class="cat">Nestlé / Strategy</div>
+      <h5>Nestlé's 100% Renewable Electricity Target — Egypt 2026 Deadline</h5>
+      <p>Nestlé Egypt publicly committed to 100% renewable electricity in its Egyptian operations by 2026. With three factories (two in 6th October, one in Banha), this is a material commitment that is now due. Progress reporting is advisable to reinforce ESG credentials and pre-empt any scrutiny under the new carbon footprint reporting environment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PILLARS ═══════════════ -->
+<section class="section" id="pillars">
+  <span class="section-tag" style="background:#E8F1FB;color:var(--e-color);">SEEG Framework</span>
+  <h2 class="section-title">Pillar-by-Pillar Updates</h2>
+  <p class="section-subtitle">Key developments across the Social, Economic, Environmental, and Governance landscape — assessed for relevance to Nestlé Egypt's operations and MENA strategy.</p>
+
+  <div class="pillars-grid">
+
+    <!-- SOCIAL -->
+    <div class="pillar-card pillar-s">
+      <div class="pillar-header">
+        <div class="pillar-icon">🫂</div>
+        <div>
+          <h3>Social</h3>
+          <p>Consumer welfare, nutrition security, labor &amp; community</p>
+        </div>
+      </div>
+      <div class="pillar-body">
+        <div class="pillar-item">
+          <div>
+            <h5>WFP Warns of Record Food Insecurity if Middle East Conflict Escalates</h5>
+            <p>The UN World Food Programme projects 2026 could see record global acute hunger levels if Middle East tensions persist — directly affecting consumer purchasing power and demand for affordable nutrition products in Egypt.</p>
+          </div>
+          <span class="nestle-tag">High Relevance</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>Parliament Reviews Infant Formula Shortages &amp; NFSA Oversight</h5>
+            <p>Health Committee convened to examine therapeutic infant milk gaps and NFSA enforcement of Law No. 1/2017. Nestlé's earlier recall remains a reference point. Government stakeholders asked to present root causes and propose solutions.</p>
+          </div>
+          <span class="nestle-tag">Direct Exposure</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>Media Criticism: Danone's Delayed Response to Formula Contamination</h5>
+            <p>Commentator Khaled Salah publicly criticized Danone for a response lag of 2+ months after Nestlé's earlier recall — raising broader corporate accountability questions for the category. Nestlé's proactive stance now seen as the benchmark.</p>
+          </div>
+          <span class="nestle-tag">Reputation Risk</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>Ministry of Supply Signs MoU with WFP (March 2026 – June 2028)</h5>
+            <p>Partnership covers food supply chain resilience, wheat flour fortification, and food subsidy data modernization. Creates an active CSR alignment opportunity for Nestlé nutrition brands (Cerelac, NIDO, MAGGI fortified products).</p>
+          </div>
+          <span class="nestle-tag">Opportunity</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>Remote Work on Sundays Effective April 1 — Factories Exempt</h5>
+            <p>PM Madbouly announced weekly Sunday remote work across public and private sectors. Production facilities, hospitals, and essential services are explicitly exempt — minimal direct operational impact for Nestlé's factories.</p>
+          </div>
+          <span class="nestle-tag">Low Impact</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>Edita Sponsors Egypt's 2028 Olympics Athletes (CSR Benchmark)</h5>
+            <p>Edita Food Industries announced partnership with Rawabet Sports to back Olympic and Paralympic champions. Sets a new benchmark for private-sector CSR in sports, potentially elevating consumer brand affinity for the category.</p>
+          </div>
+          <span class="nestle-tag">Competitive Signal</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ECONOMIC -->
+    <div class="pillar-card pillar-e">
+      <div class="pillar-header">
+        <div class="pillar-icon">📈</div>
+        <div>
+          <h3>Economic</h3>
+          <p>Growth, trade, fiscal policy &amp; market conditions</p>
+        </div>
+      </div>
+      <div class="pillar-body">
+        <div class="pillar-item">
+          <div>
+            <h5>Growth Downgraded to 4.5–4.9% — Conflict &amp; Trade Headwinds</h5>
+            <p>Fitch Solutions and Oxford Economics revised Egypt's FY2026 growth down, citing regional conflict impact on Suez Canal revenues, energy costs, tourism, and FDI. Consumer inflation expected to rise; household spending under pressure — relevant to Nestlé's mid-market and premium portfolio balance.</p>
+          </div>
+          <span class="nestle-tag">High Relevance</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>Egyptian Banks Continue LC Issuance Amid Shipping Disruptions</h5>
+            <p>Banks maintain letter of credit operations despite disruptions. Documentation requirements tightened; priority given to food commodities and strategic goods. Nestlé's food imports expected to retain priority processing cycle.</p>
+          </div>
+          <span class="nestle-tag">Monitor</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>Fuel Prices Increased ~EGP 3/Litre Across Fuel Types</h5>
+            <p>Ministry of Petroleum announced immediate fuel price adjustments citing global energy market conditions. Upstream impact on logistics, cold-chain distribution, and agricultural raw material costs across Nestlé's supply chain.</p>
+          </div>
+          <span class="nestle-tag">Cost Impact</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>IMF Divestment Deadline: June 15, 2026</h5>
+            <p>Egypt must demonstrate progress on state asset divestment to unlock the 7th IMF program review tranche. Delays risk FX pressure and dampened investor confidence — indirectly affecting import cost stability for Nestlé's procurement.</p>
+          </div>
+          <span class="nestle-tag">Macro Watch</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>FY2026/27 Budget: Tax &amp; Customs Facilitation for Industry</h5>
+            <p>PM Madbouly's preliminary budget review prioritizes private sector tax/customs relief, industrial support, and export expansion without new tax burdens. Aligns well with Nestlé's Egypt export hub strategy for the MENA region.</p>
+          </div>
+          <span class="nestle-tag">Opportunity</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>Sugar Import Prior Approval — Decree 119/2026</h5>
+            <p>All raw and refined sugar imports now require joint approval from Ministers of Supply and Investment. This affects Nestlé's procurement timelines for confectionery, dairy, cereals, and culinary categories. Buffer stock review recommended.</p>
+          </div>
+          <span class="nestle-tag">Direct Impact</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENVIRONMENTAL -->
+    <div class="pillar-card pillar-env">
+      <div class="pillar-header">
+        <div class="pillar-icon">🌿</div>
+        <div>
+          <h3>Environmental</h3>
+          <p>Climate, carbon, water &amp; sustainability compliance</p>
+        </div>
+      </div>
+      <div class="pillar-body">
+        <div class="pillar-item">
+          <div>
+            <h5>GOEIC Grants 3-Month Grace Period for Carbon Footprint Reporting</h5>
+            <p>Egyptian exporting factories have until approximately June 2026 to comply with carbon footprint reporting via GOEIC's electronic system. Reports are annual per factory (not per shipment); no fees charged. Directly relevant to Nestlé's three production facilities and EU export compliance positioning.</p>
+          </div>
+          <span class="nestle-tag">Action Required</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>EU CBAM Enters Definitive Phase (January 1, 2026)</h5>
+            <p>The Carbon Border Adjustment Mechanism is now fully operational. While food products are not yet covered, fertilisers and packaging-related inputs (aluminium) are. EU buyers now require verified carbon data from supply chains. Nestlé's EU-export positioning and supplier carbon footprint requirements need updating.</p>
+          </div>
+          <span class="nestle-tag">Watch: Supply Chain</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>Nestlé Egypt: 100% Renewable Electricity Commitment — 2026 Deadline</h5>
+            <p>Nestlé Egypt publicly committed to 100% renewable electricity use across its 3 Egyptian factories by 2026. This target is now due for verification and public reporting. Milestone achievement will strengthen ESG positioning and support CBAM-adjacent compliance narrative.</p>
+          </div>
+          <span class="nestle-tag">Milestone Due</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>Agriculture Ministry &amp; IFAD: Climate Resilience for Small Farmers</h5>
+            <p>IFAD committed additional technical and financial support for rural development, clean energy in agriculture, and sustainable pasture — with a focus on frontier governorates. Relevant to Nestlé's raw material sourcing from smallholder farms and Nestlé's existing agricultural development programs.</p>
+          </div>
+          <span class="nestle-tag">Monitor</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>NFSA Conference: Eco-Friendly Packaging a 2026 Policy Priority</h5>
+            <p>The NFSA Conference at Alexandria University highlighted eco-friendly packaging innovation as an explicit Egyptian policy priority for 2026. Combined with Nestlé's global rPET commitment (50% uplift by 2025) and USD 2B packaging investment, this signals favorable regulatory alignment ahead.</p>
+          </div>
+          <span class="nestle-tag">Policy Alignment</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>MoF Transit Shipment Customs Exemption — 3 Months</h5>
+            <p>Exceptional customs measures allow transit shipments at Egyptian ports without prior ACI registration, reducing bottlenecks in the Europe-Gulf corridor. Provides temporary supply chain relief for inbound raw materials transiting through Egypt.</p>
+          </div>
+          <span class="nestle-tag">Supply Chain Relief</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GOVERNANCE -->
+    <div class="pillar-card pillar-g">
+      <div class="pillar-header">
+        <div class="pillar-icon">⚖️</div>
+        <div>
+          <h3>Governance</h3>
+          <p>Regulatory, legislative &amp; institutional developments</p>
+        </div>
+      </div>
+      <div class="pillar-body">
+        <div class="pillar-item">
+          <div>
+            <h5>New FRA Chairman Appointed — Islam Azzam</h5>
+            <p>Presidential Decree No. 116/2026 appoints Islam Azzam (former EGX Chairman) as Financial Regulatory Authority head. His capital markets background and prior advisory role at the Real Estate Finance Authority signals a reformist, investment-facilitation orientation. A new leadership engagement window.</p>
+          </div>
+          <span class="nestle-tag">Stakeholder Mapping</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>GAFI Plans Egypt's First Private Investment Zone with El-Sewedy</h5>
+            <p>Fully integrated zone with dedicated customs office; intended to reduce licensing-to-production timelines. Part of broader GAFI ecosystem of 12 public zones hosting 1,273 projects and 77,500 jobs. May offer future siting opportunities for Nestlé expansion or co-manufacturing.</p>
+          </div>
+          <span class="nestle-tag">Monitor</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>MoI&FT + MoI: Industrial Investment Funds in Development</h5>
+            <p>Five investment banks engaged to establish specialized industrial funds. Follow-up consultations with export councils and chambers planned. Priority sectors include manufacturing and export-oriented industries — directly aligned with Nestlé's production and export mandate.</p>
+          </div>
+          <span class="nestle-tag">Advocacy Opportunity</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>MoI Decree 73/2026: Factory Leasing After 1 Year (vs. 3 Years)</h5>
+            <p>Factories in industrial zones can now be leased after 1 year of operation rather than 3, provided construction is complete and licenses obtained. This improves asset utilization flexibility and may reduce idle capacity risk in Nestlé's or partner facilities.</p>
+          </div>
+          <span class="nestle-tag">Operational Benefit</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>Minister of Investment Reform Priorities: Digital Transformation, Decentralization, Data Quality</h5>
+            <p>Minister Farid identified three immediate priorities: digitizing corporate procedures, improving economic data quality, and reducing government intervention in business decisions. Nestlé can position as a model investor in all three dimensions through Chamber engagement.</p>
+          </div>
+          <span class="nestle-tag">Alignment</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>Customs Circular No. 5/2026: Nafeza Export Procedures During Transition</h5>
+            <p>Customs Authority issued interim export procedures while the new Nafeza export platform is implemented. All steps from declaration to shipment are to be carried out electronically. Operational awareness required for Nestlé's export documentation team to avoid disruption.</p>
+          </div>
+          <span class="nestle-tag">Compliance</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>Importers Registry Law: Foreign Currency Capital Now Permitted</h5>
+            <p>HoR granted final approval to amendments allowing companies to register as importers with foreign-currency denominated capital. Also facilitates continued registration through legal form changes and management succession — directly reduces administrative friction for Nestlé Egypt's import operations.</p>
+          </div>
+          <span class="nestle-tag">Direct Benefit</span>
+        </div>
+        <div class="pillar-item">
+          <div>
+            <h5>8 Golden Licenses Awarded, Including Food Manufacturing (Sadat City)</h5>
+            <p>Al Amir Company secured a Golden License for a EGP 1B fruit/vegetable processing complex in Sadat City (completing Oct 2027, 400 jobs). Signals growing government appetite for food manufacturing investment. Nestlé may leverage the Golden License mechanism for future expansion.</p>
+          </div>
+          <span class="nestle-tag">Benchmark / Opportunity</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /pillars-grid -->
+</section>
+
+<!-- ═══════════════ REGULATORY MATRIX ═══════════════ -->
+<section class="section" id="matrix">
+  <span class="section-tag" style="background:var(--g-bg);color:var(--g-color);">Governance Intelligence</span>
+  <h2 class="section-title">Regulatory &amp; Ministerial Matrix</h2>
+  <p class="section-subtitle">Key decrees, circulars, and policy announcements from March 2026 — mapped by issuing authority, Nestlé category exposure, and recommended action.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th class="col-w1">Decree / Decision</th>
+          <th class="col-w2">Issuing Body</th>
+          <th class="col-w3">Description</th>
+          <th class="col-w4">Categories Affected</th>
+          <th class="col-w5">Business Impact for Nestlé</th>
+          <th class="col-w6">Priority / Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Decree No. 119/2026</strong></td>
+          <td>MoI&FT</td>
+          <td>All raw &amp; refined sugar imports now require prior joint approval from Ministers of Supply and MoI&FT</td>
+          <td>Confectionery (KitKat, cereals), Dairy (flavored), Culinary (MAGGI)</td>
+          <td>Procurement lead times extended; potential inventory gaps if approval is delayed for requested quantities. Buffer stock review critical.</td>
+          <td><span class="ew-badge badge-high" style="font-size:10px;">Immediate Action</span></td>
+        </tr>
+        <tr>
+          <td><strong>Decree No. 73/2026</strong></td>
+          <td>Ministry of Industry</td>
+          <td>Reduces minimum operating period before factory leasing from 3 years to 1 year in industrial zones</td>
+          <td>All manufacturing facilities</td>
+          <td>Improved flexibility for co-manufacturing, idle capacity activation, and asset optimization within 6th October and Banha operations.</td>
+          <td><span class="ew-badge badge-opp" style="font-size:10px;">Opportunity</span></td>
+        </tr>
+        <tr>
+          <td><strong>Customs Circular No. 5/2026</strong></td>
+          <td>Egyptian Customs Authority</td>
+          <td>Interim export procedures during Nafeza platform transition. All steps to be carried out electronically.</td>
+          <td>All exported products (22 export markets)</td>
+          <td>Documentation team must align with interim procedures to avoid export shipment delays. Minor operational adjustment required.</td>
+          <td><span class="ew-badge badge-med" style="font-size:10px;">Compliance</span></td>
+        </tr>
+        <tr>
+          <td><strong>HoR — Importers Registry Law Amendment (Law 121/1982)</strong></td>
+          <td>House of Representatives / MoI&FT</td>
+          <td>Companies may register as importers with foreign-currency capital. Also facilitates legal form changes without losing registration status.</td>
+          <td>All import-dependent categories</td>
+          <td>Directly reduces administrative friction for Nestlé's import registration and registration maintenance through any future corporate restructuring.</td>
+          <td><span class="ew-badge badge-opp" style="font-size:10px;">Positive</span></td>
+        </tr>
+        <tr>
+          <td><strong>Presidential Decree No. 116/2026</strong></td>
+          <td>President / FRA</td>
+          <td>Appointment of Islam Azzam as Chairman of the Financial Regulatory Authority</td>
+          <td>Capital market operations, financial instruments, corporate governance</td>
+          <td>New leadership window for stakeholder mapping. Azzam's investment-facilitation orientation aligns with Nestlé's expansion narrative.</td>
+          <td><span class="ew-badge badge-low" style="font-size:10px;">Stakeholder</span></td>
+        </tr>
+        <tr>
+          <td><strong>PM Decision No. 805/2026</strong></td>
+          <td>Prime Minister</td>
+          <td>Ministerial Committee for Settlement of Investment Contract Disputes — composition revised; chaired by PM</td>
+          <td>Investment contracts, dispute resolution</td>
+          <td>Strengthens investment dispute resolution framework. Relevant if any contract disputes arise with government entities or industrial zone operators.</td>
+          <td><span class="ew-badge badge-low" style="font-size:10px;">Monitor</span></td>
+        </tr>
+        <tr>
+          <td><strong>MoF Customs Transit Exemption (3 Months)</strong></td>
+          <td>Ministry of Finance</td>
+          <td>Transit shipments at Egyptian ports exempt from prior ACI registration for 3 months; applies to goods in transit since onset of Iran conflict</td>
+          <td>Raw materials, packaging, imports in transit via Egypt</td>
+          <td>Reduces bottleneck for inbound raw material shipments transiting through Egyptian ports. Temporary measure — contingency planning for post-exemption period required.</td>
+          <td><span class="ew-badge badge-med" style="font-size:10px;">Temporary Relief</span></td>
+        </tr>
+        <tr>
+          <td><strong>GOEIC Carbon Footprint Reporting Requirement</strong></td>
+          <td>GOEIC</td>
+          <td>3-month grace period for exporting factories to comply with carbon footprint reporting via electronic system. Annual per-factory requirement, no fee.</td>
+          <td>All export-oriented facilities (3 Nestlé factories)</td>
+          <td>Non-compliance by Q2 2026 risks shipment disruptions. GOEIC role is limited to upload confirmation — no physical inspection. Early compliance demonstrates ESG leadership.</td>
+          <td><span class="ew-badge badge-high" style="font-size:10px;">Action Required</span></td>
+        </tr>
+        <tr>
+          <td><strong>Senate Review: Investment Law No. 72/2017 Amendments</strong></td>
+          <td>Senate — Financial &amp; Economic Affairs Committee</td>
+          <td>Proposal to replace revenue-based zone fees with 5% net profit levy; strengthen Investor Services Center authority; convert dispute committees to binding independent bodies</td>
+          <td>Free zone and industrial zone operations</td>
+          <td>If enacted, fee structure for Nestlé's free zone facilities changes from revenue-based (1–2%) to profit-based (5%). Net impact depends on margins. One-stop-shop improvement is positive.</td>
+          <td><span class="ew-badge badge-med" style="font-size:10px;">Advocacy Window</span></td>
+        </tr>
+        <tr>
+          <td><strong>8 Golden Licenses — Food Sector Inclusion</strong></td>
+          <td>MoI&FT</td>
+          <td>Golden Licenses awarded across energy, transport, manufacturing, logistics, and food. Al Amir Company secured food manufacturing license in Sadat City.</td>
+          <td>Food manufacturing investment</td>
+          <td>Nestlé should assess eligibility for Golden License mechanism for any planned capacity expansion — accelerates licensing, land allocation, and timeline to production.</td>
+          <td><span class="ew-badge badge-opp" style="font-size:10px;">Opportunity</span></td>
+        </tr>
+        <tr>
+          <td><strong>Arla/DMK Merger Notification</strong></td>
+          <td>Egyptian Competition Authority</td>
+          <td>Deutsches Milchkontor AG (DMK) notified Egyptian regulators of full merger with Arla Foods. Both operate in dairy imports (butter, cheese, milk powder).</td>
+          <td>Dairy — butter, cheese, milk powder</td>
+          <td>Consolidation of two dairy importers may shift competitive dynamics in specialty dairy. Monitor pricing and distribution impacts on Nestlé's Nido and dairy ingredient imports.</td>
+          <td><span class="ew-badge badge-med" style="font-size:10px;">Monitor</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════ COMPETITIVE ═══════════════ -->
+<section class="section" id="competitive">
+  <span class="section-tag" style="background:var(--s-bg);color:var(--s-color);">Market Intelligence</span>
+  <h2 class="section-title">Competitive &amp; Industry Landscape</h2>
+  <p class="section-subtitle">Key developments across Nestlé's competitive set in Egypt and globally — tracking positioning, CSR, innovation, and M&amp;A signals.</p>
+  <div class="comp-grid">
+
+    <div class="comp-card">
+      <div class="comp-header">
+        <div class="comp-initial" style="background:#003087;">U</div>
+        <div>
+          <h5>Unilever Egypt</h5>
+          <p>FMCG / Culinary &amp; Condiments</p>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div class="comp-item">
+          <div class="comp-item-tag">CSR / Ramadan</div>
+          <p>Unilever's Knorr brand renewed partnership with Egyptian Food Bank for Ramadan food assistance — directly competing with Nestlé MAGGI's CSR footprint in culinary and community care.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Global M&A Signal</div>
+          <p>Unilever and Kraft Heinz held exploratory talks on merging condiments businesses. If progressed, would create a formidable condiments entity competing with MAGGI in seasoning, sauces, and cooking aids across MENA.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Strategic Read</div>
+          <p>Unilever is leveraging Ramadan for brand equity building while exploring strategic consolidation globally. Nestlé should monitor any Egypt-level Kraft Heinz integration announcements and reinforce MAGGI CSR visibility.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-header">
+        <div class="comp-initial" style="background:#004B87;">D</div>
+        <div>
+          <h5>Danone Egypt</h5>
+          <p>Dairy / Infant Nutrition / Yogurt</p>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div class="comp-item">
+          <div class="comp-item-tag">Reputational Risk</div>
+          <p>Danone publicly criticized for 2+ month delay in responding to infant formula contamination concerns following Nestlé's recall — raising broader sector accountability concerns. Egyptian commentators called for media investigation.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Global Strategy</div>
+          <p>Danone acquired Huel (nutritionally complete foods) as part of "Renew Danone" — signaling a global pivot toward functional nutrition adjacent to Nestlé's Cerelac and NIDO positioning.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Local Innovation</div>
+          <p>Activia with probiotics saw notable volume growth; Danone B-Corp certification maintained at its Nubareya Farm. Continued sustainability credentialing creates differentiation in the premium dairy segment.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-header">
+        <div class="comp-initial" style="background:#006633;">J</div>
+        <div>
+          <h5>Juhayna Food Industries</h5>
+          <p>Dairy / Juice / Local Champion</p>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div class="comp-item">
+          <div class="comp-item-tag">Financial Performance</div>
+          <p>H1 2025: revenues +23% YoY to USD 293.5M (EGP 14.2B), driven by double-digit volume growth and a 47% USD increase in finished product exports. Juhayna is on an aggressive growth trajectory.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Product Innovation</div>
+          <p>Launched Greek yogurt (multiple flavors including acai, oats &amp; flaxseeds), Turkish Labneh, Premium Pudding and chocolate mix with 30% less sugar — directly targeting health-conscious consumers in Nestlé-adjacent segments.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Ownership</div>
+          <p>Qatar-based Baladna holds 15% stake (acquired 2023), bringing Gulf capital and potential regional distribution leverage. Four subsidiaries merged in November 2024 to streamline operations.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-header">
+        <div class="comp-initial" style="background:#B40000;">A</div>
+        <div>
+          <h5>Arla Foods / DMK</h5>
+          <p>Dairy Imports / Specialty Cheese &amp; Powder</p>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div class="comp-item">
+          <div class="comp-item-tag">M&A</div>
+          <p>Deutsches Milchkontor AG (DMK) notified Egyptian authorities of full merger with Arla Foods. Arla operates locally in butter, soft/shredded cheese, milk powder, and dairy ingredients; DMK in hard/semi-hard cheeses and milk powder.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Prior Domty Move</div>
+          <p>Arla's 2024 bid for Domty (valued at ~USD 183M) was halted in April 2025 due to Domty's corporate split preventing due diligence. The Arla-DMK merger represents a consolidation strategy in dairy imports following this setback.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Impact on Nestlé</div>
+          <p>Combined Arla/DMK entity becomes a stronger dairy import competitor. Relevant to Nestlé's NIDO, dairy ingredient imports, and specialty dairy positioning. Monitor Egyptian Competition Authority ruling.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-header">
+        <div class="comp-initial" style="background:#E10000;">C</div>
+        <div>
+          <h5>Coca-Cola HBC Egypt</h5>
+          <p>Beverages / Sustainability / CSR</p>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div class="comp-item">
+          <div class="comp-item-tag">Stakeholder Engagement</div>
+          <p>Coca-Cola HBC Egypt advancing cooperation with national stakeholders — likely focused on sustainability, water stewardship, and recycling, aligned with Egypt's environmental development agenda.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Market Context</div>
+          <p>Egypt's soft drinks market valued at USD 11.83B in 2026 growing at 14.32% CAGR. Coca-Cola remains dominant in carbonated; increasingly active in sustainability communications which builds regulatory goodwill.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Strategic Read</div>
+          <p>Coca-Cola's proactive stakeholder engagement in sustainability can outpace Nestlé's environmental narrative if the latter doesn't proactively communicate its 2026 renewable electricity milestone.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-header">
+        <div class="comp-initial" style="background:#005eb8;">P</div>
+        <div>
+          <h5>PepsiCo Egypt / Beyti</h5>
+          <p>Beverages / Dairy / Snacks</p>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div class="comp-item">
+          <div class="comp-item-tag">ESG Leadership</div>
+          <p>PepsiCo globally confirmed completion of its pep+ water sustainability targets (World Water Day, March 22, 2026) — signaling ESG leadership and positioning PepsiCo/Beyti as a sustainability-forward brand in Egypt.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Dairy / Beyti</div>
+          <p>Beyti (PepsiCo-Almarai JV) remains a key dairy competitor. Continued cold-chain investment and brand presence in fluid milk and juice segments. INJAZ Egypt women leadership initiative co-led with Danone reinforces employer brand.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Strategic Read</div>
+          <p>PepsiCo's ESG milestone communications set an industry benchmark. Nestlé should time its 2026 renewable electricity achievement announcement strategically to maintain ESG parity or leadership.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-header">
+        <div class="comp-initial" style="background:#DA291C;">E</div>
+        <div>
+          <h5>Edita Food Industries</h5>
+          <p>Snacks / Confectionery / Local Champion</p>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div class="comp-item">
+          <div class="comp-item-tag">CSR Benchmark</div>
+          <p>Announced partnership with Rawabet Sports to sponsor Egypt's Olympic and Paralympic athletes for Los Angeles 2028. Athletes include Sara Ahmed, Mostafa Asal (squash world no. 1), and Mohamed El Miniawy (Paralympic gold). Raised the bar for corporate sports sponsorship.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Brand Positioning</div>
+          <p>Also sponsors national handball teams across age groups. Establishes Edita as a major corporate citizenship brand — a positioning space Nestlé has traditionally occupied in nutrition and community.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-header">
+        <div class="comp-initial" style="background:#2B7A0B;">N</div>
+        <div>
+          <h5>New Market Entrant: Foshan Haitian (China)</h5>
+          <p>Sauces / Seasonings / Food Manufacturing</p>
+        </div>
+      </div>
+      <div class="comp-body">
+        <div class="comp-item">
+          <div class="comp-item-tag">Market Entry Signal</div>
+          <p>Leading Chinese food company Foshan Haitian Flavouring and Food Co. met with NFSA Chairman to discuss establishing an integrated food manufacturing complex in Egypt — targeting domestic supply and regional export to Africa and Middle East.</p>
+        </div>
+        <div class="comp-item">
+          <div class="comp-item-tag">Impact on Nestlé</div>
+          <p>Potential new competitor in sauces and seasonings — a space currently occupied by MAGGI. If established, Chinese production economics could pressure pricing in the culinary segment. Closely monitor licensing and construction progress.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ NESTLÉ STRATEGIC LENS ═══════════════ -->
+<section class="section" id="strategic-lens">
+  <span class="section-tag" style="background:#FFF0F3;color:var(--nestle-red);">Nestlé Strategic Intelligence</span>
+  <h2 class="section-title">Nestlé Egypt — Strategic Lens &amp; MENA Implications</h2>
+  <p class="section-subtitle">Connecting March 2026 developments directly to Nestlé Egypt's strategic priorities, MENA export hub positioning, and recommended leadership actions.</p>
+  <div class="lens-grid">
+
+    <div class="lens-card">
+      <span class="lens-label">Reputation Management</span>
+      <h5>Infant Formula Recall: From Crisis to Advocacy Leadership</h5>
+      <p>The January 2026 recall of NAN, S26, and ALFAMINO in Egypt was handled proactively by Nestlé — recognized as the first mover in the industry. Danone's slower response drew public criticism. Parliament's Health Committee review is ongoing.</p>
+      <span class="action">Action: Proactively engage NFSA and Parliament's Health Committee with Nestlé's quality control framework. Use the EFSA 0.2 ng/g internal standard as a differentiating proof point. Propose Nestlé as a thought-leadership partner in any national infant formula safety framework update.</span>
+    </div>
+
+    <div class="lens-card">
+      <span class="lens-label">MENA Export Hub Strategy</span>
+      <h5>Egypt's Investment Climate Reforms Create Export Acceleration Window</h5>
+      <p>Nestlé exports to 22 countries from Egypt. The government's 2026 budget priorities (export support, customs facilitation, industrial funds) and the Golden License mechanism directly support Nestlé's Egypt-as-hub positioning for MENA, Africa, and Europe.</p>
+      <span class="action">Action: Engage MoI&FT and GAFI to position Nestlé as a model Golden License applicant for any capacity expansion. Include Egypt's export record (22 markets) in MoI&FT industrial fund consultations as an anchor case.</span>
+    </div>
+
+    <div class="lens-card">
+      <span class="lens-label">Supply Chain Resilience</span>
+      <h5>Sugar Import Approval + Shipping Disruptions: Dual Supply Risk</h5>
+      <p>Decree 119/2026 (sugar approval) combined with regional shipping disruptions and rising insurance costs creates compounded procurement risk for confectionery, dairy, and culinary categories dependent on imported inputs.</p>
+      <span class="action">Action: Initiate buffer stock review for all sugar-dependent SKUs. Proactively apply for import approvals under Decree 119/2026 ahead of peak production cycles. Revisit alternate sourcing routes for key raw materials.</span>
+    </div>
+
+    <div class="lens-card">
+      <span class="lens-label">Environmental Compliance</span>
+      <h5>Carbon Footprint Reporting + Renewable Electricity: Double ESG Milestone</h5>
+      <p>GOEIC's carbon footprint reporting deadline falls in Q2 2026, coinciding with Nestlé Egypt's self-declared 2026 target for 100% renewable electricity. Achieving and communicating both creates a powerful, timely ESG narrative.</p>
+      <span class="action">Action: Confirm renewable electricity status across all 3 factories. Complete GOEIC electronic carbon footprint upload for each facility before the grace period ends. Coordinate PR release combining both milestones for maximum MENA brand impact.</span>
+    </div>
+
+    <div class="lens-card">
+      <span class="lens-label">Advocacy &amp; Lobbying</span>
+      <h5>Investment Law Reform: Fee Restructuring Could Affect Zone Operations</h5>
+      <p>Senate proposal to replace 1–2% revenue-based zone fees with 5% net profit levy. For a high-margin exporter operating in free zones, this could be net negative or neutral depending on category mix and margins.</p>
+      <span class="action">Action: Engage the Federation of Egyptian Industries (FEI) and Food Industries Chamber ahead of the Senate's final vote. Model the financial impact across free zone operations and submit a data-backed position paper through appropriate business chamber channels.</span>
+    </div>
+
+    <div class="lens-card">
+      <span class="lens-label">Consumer &amp; Nutrition Strategy</span>
+      <h5>Food Insecurity + WFP Partnership: Nutrition Equity Opportunity</h5>
+      <p>WFP's food insecurity warning and the Ministry of Supply's new MoU (wheat fortification, food safety systems, subsidy management) creates a direct alignment opportunity for Nestlé's Creating Shared Value programs, particularly around fortified nutrition and infant care.</p>
+      <span class="action">Action: Engage the Ministry of Supply and WFP partnership framework to position Nestlé's nutrition products (Cerelac, NIDO, MAGGI fortified) as aligned with the MoU's goals. Explore co-branding with the WFP's fortification program as a policy and CSR lever.</span>
+    </div>
+
+    <div class="lens-card">
+      <span class="lens-label">Competitive Intelligence</span>
+      <h5>Culinary Segment Under Dual Pressure: Unilever/KH + Foshan Haitian</h5>
+      <p>Potential Unilever-Kraft Heinz condiments merger and a new Chinese food manufacturing entrant both target the sauces and seasonings space — MAGGI's home territory. These are medium-term but structurally significant competitive threats.</p>
+      <span class="action">Action: Accelerate MAGGI's brand differentiation on health positioning and local sourcing. Monitor Egyptian Competition Authority review of Arla/DMK merger; track Foshan Haitian's licensing progress through NFSA and industrial zone channels.</span>
+    </div>
+
+    <div class="lens-card">
+      <span class="lens-label">Digital &amp; Governance</span>
+      <h5>Nafeza Platform Transition: Export Documentation Continuity Risk</h5>
+      <p>Customs Circular No. 5/2026 governs export procedures during the Nafeza system transition. All documentation must be submitted electronically. Any system downtime or process gaps could cause export delays across Nestlé's 22-market network.</p>
+      <span class="action">Action: Brief Nestlé's export operations and logistics teams on Circular No. 5/2026 requirements. Designate a dedicated Nafeza platform transition lead for continuity of MENA export shipments during the implementation period.</span>
+    </div>
+
+    <div class="lens-card">
+      <span class="lens-label">Stakeholder Mapping</span>
+      <h5>New FRA Chairman: Early Engagement with Reform-Minded Leadership</h5>
+      <p>Islam Azzam's appointment at the FRA brings a capital markets and investment-facilitation orientation. As a major investor in Egyptian financial instruments and listed-company ecosystem, Nestlé Egypt has a natural entry point for early relationship building.</p>
+      <span class="action">Action: Include FRA Chairman in upcoming stakeholder engagement calendar. Frame outreach around Nestlé's investment profile, export contribution, and corporate governance standards — resonates with Azzam's EGX background.</span>
+    </div>
+
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<div class="footer">
+  <div>
+    <strong>Nestlé Egypt — Strategic Sectoral Monitor</strong><br>
+    March 2026 Edition &nbsp;|&nbsp; Prepared for Nestlé Egypt
+  </div>
+  <div style="text-align:right;">
+    Confidential &amp; Proprietary &nbsp;|&nbsp; For Internal Use Only<br>
+    Sources: Egyptian Official Gazette, GAFI, MoI&FT, FEI, IMF, Reuters, Nestlé MENA, Industry Press
+  </div>
+</div>
+
+</body>
+</html>
